@@ -98,7 +98,7 @@ const Gallery = ({images = [], columns = 3}) => {
                         opacity: 0;
                         width: 100%;
                         height: 100%;
-                        background: rgba(247, 148, 30, 0.6);
+                        background: var(--gradient-secondary);
                         border-radius: 5px;
                         transition: all 0.25s;
                     }

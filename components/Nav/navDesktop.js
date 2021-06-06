@@ -16,9 +16,6 @@ const NavDesktop = (props) => {
     };
     return (
         <div className="nav-desktop">
-            <div className="knot-container">
-                <img src="/knot_hall_of_fame.png" width="120" height="auto" />
-            </div>
             <div className="link-container">
                 <div className="logo">
                     <div>
@@ -31,35 +28,14 @@ const NavDesktop = (props) => {
                     </div>
                 </div>
                 <ul>
-                    <li onClick={() => handleRouting('section-why')}>Why</li>
-                    <li onClick={() => handleRouting('section-djs')}>DJs</li>
-                    <li onClick={() => handleRouting('section-packages')}>Packages</li>
-                    <li onClick={() => handleRouting('section-gallery')}>Gallery</li>
-                    <li onClick={() => handleRouting('section-photobooth')}>
-                        Photo Booth
-                    </li>
                     <li>
-                        <Link href="/faqs">
-                            <a
-                                title="FAQ"
-                                style={{color: '#fff', textDecoration: 'none'}}>
-                                FAQ
-                            </a>
+                        <Link href="/">
+                            <a>Home</a>
                         </Link>
                     </li>
-                    <li>
-                        <a
-                            className="knot-link"
-                            href="https://www.theknot.com/marketplace/rockstar-djs-ballwin-mo-552134#reviews-area"
-                            target="blank"
-                            title="Read Our Reviews On the Knot">
-                            <img
-                                src="/the_knot-btn.png"
-                                alt="The Knot Reviews"
-                                width="160"
-                            />
-                        </a>
-                    </li>
+                    <li onClick={() => handleRouting('section-about')}>About Us</li>
+                    <li onClick={() => handleRouting('section-packages')}>Packages</li>
+                    <li onClick={() => handleRouting('section-gallery')}>Gallery</li>
                 </ul>
             </div>
             <style jsx>
@@ -71,8 +47,6 @@ const NavDesktop = (props) => {
                         align-items: flex-start;
                         width: 100%;
                         z-index: 10;
-                    }
-                    .link-container {
                         background: linear-gradient(
                             to bottom,
                             rgb(20, 30, 48),
@@ -81,6 +55,12 @@ const NavDesktop = (props) => {
                             rgba(20, 30, 48, 0.3),
                             transparent
                         );
+                    }
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                    .link-container {
                         display: flex;
                         justify-content: space-between;
                     }
@@ -128,13 +108,6 @@ const NavDesktop = (props) => {
                     }
                     li:last-child:hover {
                         border-top: 3px solid transparent;
-                    }
-                    .knot-container {
-                        position: relative;
-                    }
-                    .knot-link {
-                        display: flex;
-                        align-items: center;
                     }
                 `}
             </style>

@@ -3,21 +3,16 @@ import SectionHeader from '../SectionHeader';
 import Gallery from '../Gallery';
 
 const images = [
-    '/galleryImages/gallery_01.jpg',
-    '/galleryImages/gallery_02.jpg',
-    '/galleryImages/gallery_03.jpg',
-    '/galleryImages/gallery_04.jpg',
-    '/galleryImages/gallery_05.jpg',
-    '/galleryImages/gallery_06.jpg',
-    '/galleryImages/gallery_07.jpg',
-    '/galleryImages/gallery_08.jpg',
-    '/galleryImages/gallery_09.jpg',
-    '/galleryImages/gallery_10.jpg',
-    '/galleryImages/gallery_11.jpg',
-    '/galleryImages/gallery_12.jpg',
-    '/galleryImages/gallery_13.jpg',
-    '/galleryImages/gallery_14.jpg',
-    '/galleryImages/gallery_15.jpg',
+    '/galleryImages/gallery-01.jpg',
+    '/galleryImages/gallery-02.jpg',
+    '/galleryImages/gallery-03.jpg',
+    '/galleryImages/gallery-04.jpg',
+    '/galleryImages/gallery-05.jpg',
+    '/galleryImages/gallery-06.jpg',
+    '/galleryImages/gallery-07.jpg',
+    '/galleryImages/gallery-08.jpg',
+    '/galleryImages/gallery-09.jpg',
+    '/galleryImages/gallery-10.jpg',
 ];
 
 const SectionGallery = (props) => {
@@ -27,6 +22,13 @@ const SectionGallery = (props) => {
                 <SectionHeader title="Gallery" subtitle="Take A Look Inside!" />
                 <Gallery images={images} />
             </Container>
+            <style jsx>
+                {`
+                    #section-gallery {
+                        background: var(--gray-100);
+                    }
+                `}
+            </style>
         </section>
     );
 };

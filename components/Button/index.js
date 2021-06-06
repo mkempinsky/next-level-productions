@@ -5,9 +5,8 @@ const Button = (props) => {
             <style jsx>
                 {`
                     button {
-                        font-family: Montserrat, sans-serif;
                         color: #fff;
-                        background: var(--interactive);
+                        background: var(--primary);
                         padding: 12px;
                         border-radius: 4px;
                         border: none;
@@ -18,7 +17,6 @@ const Button = (props) => {
                         cursor: pointer;
                     }
                     button:hover {
-                        background: var(--interactive-400);
                         transition: all 0.25s;
                     }
                     button:focus {

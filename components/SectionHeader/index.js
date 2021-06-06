@@ -1,6 +1,6 @@
 import {BREAKPOINT} from '../../lib/styles';
 
-const SectionHeader = ({title = '', subtitle = ''}) => {
+const SectionHeader = ({title = '', subtitle = '', color = ''}) => {
     return (
         <div className="header-container">
             <h2>{title}</h2>
@@ -21,7 +21,7 @@ const SectionHeader = ({title = '', subtitle = ''}) => {
                     }
                     h2 {
                         text-align: center;
-                        color: var(--orange);
+                        color: ${color || `var(--primary)`};
                         font-size: 60px;
                     }
                     h4 {

@@ -19,7 +19,7 @@ const SectionFacebook = (props) => {
             <style jsx>
                 {`
                     .parallax {
-                        background: url('/facebook.jpg');
+                        background: var(--gradient-primary), url('/dj_background.jpg');
                         min-height: 250px;
                         background-attachment: fixed;
                         background-position: center;

@@ -10,7 +10,6 @@ const NavMobile = (props) => {
     const router = useRouter();
     const pathname = router?.pathname || '';
 
-
     const handleRouting = (section) => {
         if (pathname === '/') {
             scrollToElement(section, 100);
@@ -39,34 +38,13 @@ const NavMobile = (props) => {
             <div className={`nav__slideout ${showSlidout ? 'active' : ''}`}>
                 <div onClick={() => toggleSlideOut(false)}>
                     <ul>
-                        <li onClick={() => handleRouting('section-why')}>Why</li>
-                        <li onClick={() => handleRouting('section-djs')}>DJs</li>
+                        <li onClick={() => handleRouting('section-hero')}>Home</li>
+                        <li onClick={() => handleRouting('section-why')}>About Us</li>
                         <li onClick={() => handleRouting('section-packages')}>
                             Packages
                         </li>
                         <li onClick={() => handleRouting('section-gallery')}>Gallery</li>
-                        <li onClick={() => handleRouting('section-photobooth')}>
-                            Photo Booth
-                        </li>
-                        <li>
-                            <Link href="/faqs">
-                                <a
-                                    title="FAQ"
-                                    style={{color: '#000', textDecoration: 'none'}}>
-                                    FAQ
-                                </a>
-                            </Link>
-                        </li>
                     </ul>
-                </div>
-                <div className="nav__survey">
-                    <a
-                        className="knot-link"
-                        href="https://www.theknot.com/marketplace/rockstar-djs-ballwin-mo-552134#reviews-area"
-                        target="blank"
-                        title="Read Our Reviews On the Knot">
-                        <img src="/the_knot-btn.png" alt="The Knot Reviews" width="160" />
-                    </a>
                 </div>
                 <div className="nav__contact">
                     <strong>

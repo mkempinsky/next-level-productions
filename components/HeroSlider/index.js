@@ -4,14 +4,17 @@ import IconMail from '../Svgs/icon-mail';
 import {useState, useEffect} from 'react';
 
 const images = [
-    '/heroImages/hero_img_1.jpeg',
-    '/heroImages/hero_img_2.jpeg',
-    '/heroImages/hero_img_3.jpeg',
-    '/heroImages/hero_img_4.jpeg',
+    '/galleryImages/gallery-05.jpg',
+    '/galleryImages/gallery-07.jpg',
+    '/galleryImages/gallery-03.jpg',
+    '/galleryImages/gallery-01.jpg',
 ];
+
+const titles = ['Interactive Entertainment', 'Incredible Experiences', 'Experts in AV'];
 
 const HeroSlider = (props) => {
     const [currentImageIndex, setImageIndex] = useState(0);
+    const [currentTitleIndex, setTitleIndex] = useState(0);
 
     useEffect(() => {
         const timmer = setInterval(() => {
@@ -25,23 +28,35 @@ const HeroSlider = (props) => {
         return () => clearInterval(timmer);
     }, []);
 
+    useEffect(() => {
+        const timmer = setInterval(() => {
+            setTitleIndex((currentTitleIndex) => {
+                const nextTitle = currentTitleIndex + 1;
+                return nextTitle >= 3 ? 0 : nextTitle;
+            });
+            return;
+        }, 5000);
+
+        return () => clearInterval(timmer);
+    }, []);
+
     const currentImage = images[currentImageIndex];
+    const currentTitle = titles[currentTitleIndex];
 
     return (
-        <div className="hero-slider">
+        <div className="hero-slider" id="section-hero">
             <div
                 className="hero__background"
-                style={{backgroundImage: `url(${currentImage})`}}>
+                style={{
+                    backgroundImage: `var(--gradient-secondary), url(${currentImage})`,
+                }}>
                 <div className="hero__inner">
                     <div>
-                        <img
-                            src="/logo_square.png"
-                            width="180"
-                            height="auto"
-                            style={{marginTop: '100px'}}
-                        />
-                        <div>
-                            <img src="/next_level_logo.png" width="180" height="auto" />
+                        <div className="hero__title animate__backInRight">
+                            {currentTitle}
+                        </div>
+                        <div className="hero__logo">
+                            <img src="/next_level_logo.png" width="300" height="auto" />
                         </div>
                         <div className="hero__social">
                             <a
@@ -82,6 +97,20 @@ const HeroSlider = (props) => {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    width: 100%;
+                }
+                .hero__title {
+                    color: var(--primary);
+                    font-size: 60px;
+                    font-family: var(--font-primary);
+                    font-weight: bold;
+                    width: 100%;
+                    text-shadow: 0px 0px 10px rgba(000, 000, 000, 0.8);
+                }
+                .hero__logo {
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
                 }
                 .hero__social {
                     display: grid;
@@ -89,6 +118,8 @@ const HeroSlider = (props) => {
                     grid-gap: 10px;
                     max-width: 180px;
                     align-items: center;
+                    justify-content: center;
+                    margin: 0 auto;
                 }
                 .hero__social > a {
                     width: 40px;
@@ -103,7 +134,7 @@ const HeroSlider = (props) => {
                 }
                 .hero__social > a:hover {
                     cursor: pointer;
-                    background: var(--orange);
+                    background: var(--primary);
                     transition: all 0.25s;
                 }
             `}</style>

@@ -14,61 +14,62 @@ const SectionWhy = (props) => {
 
     return (
         <section id="section-why" ref={ref}>
-            <Container>
-                <SectionHeader
-                    title="Why Choose Us"
-                    subtitle="For the Following Reasons"
-                />
-                <div className="card-container">
-                    <div className={`card ${animatedClass}`}>
-                        <h4>Professional</h4>
-                        <div
-                            className="img"
-                            style={{backgroundImage: 'url("/professional_dj.png")'}}
-                        />
-                        <p>
-                            An outstanding reception needs outstanding entertainment! Our
-                            DJs are the most professionally trained entertainers in our
-                            region, and from setup to break down, we are there to help
-                            make your celebration perfect! We will coordinate with all of
-                            your other wedding professionals, to ensure that your
-                            reception runs smoothly and so that you can just relax and
-                            enjoy!
-                        </p>
+            <div className="parallax">
+                <Container>
+                    <SectionHeader title="Why Choose Next Level?" color="#fff" />
+                    <div className="card-container">
+                        <div className={`card ${animatedClass}`}>
+                            <h4>Expert Interactive Entertainers</h4>
+                            <p>
+                                An amazing party is dependent on excellent entertainment,
+                                which is why Next Level Productions features only the best
+                                trained MCs, DJs and dancers in the Midwest. Our MCs
+                                aren’t just a loud person screaming into a microphone, but
+                                rather expert entertainers, trained in how to engage with
+                                and perform for all ages!
+                            </p>
+                        </div>
+                        <div className={`card ${animatedClass}`}>
+                            <h4>Incredible Audiovisual Experience</h4>
+                            <p>
+                                While talent is the core of our company, our ability to do
+                                things like show music videos and slideshows on an LED
+                                curtain is certainly remarkable. Rather than just lights
+                                in a ballroom, we can use lasers and high powered moving
+                                head lights to bring a music festival feel to your
+                                celebration! There’s almost no limit to what we can
+                                create!
+                            </p>
+                        </div>
+                        <div className={`card ${animatedClass}`}>
+                            <h4>Personalized, Customizable Entertainment</h4>
+                            <p>
+                                We want to help create your unique, customized
+                                celebration. From the timeline of your ceremonial events
+                                to your personalized playlist to the lighting and AV
+                                effects, we want to make sure every detail matches your
+                                vision!
+                            </p>
+                        </div>
                     </div>
-                    <div className={`card ${animatedClass}`}>
-                        <h4>Personalized</h4>
-                        <div
-                            className="img"
-                            style={{backgroundImage: 'url("/personalized.png")'}}
-                        />
-                        <p>
-                            <strong>This day is yours, not ours!</strong> We want to get
-                            to know "your story"! We meet personally to get a feel of who
-                            you are and how you want your celebration to be! Each
-                            reception is unique, and we take the time to help you develop
-                            your timeline, your playlist, and your ambiance.
-                        </p>
-                    </div>
-                    <div className={`card ${animatedClass}`}>
-                        <h4>Fun</h4>
-                        <div
-                            className="img"
-                            style={{backgroundImage: 'url("/fun.png")'}}
-                        />
-                        <p>
-                            We think you deserve to enjoy a great party! We will take your
-                            song preferences, and get your friends and family to pack the
-                            dance floor, without being resorting to “cheesy” tactics and
-                            routines. We guarantee that your guests will have a blast, and
-                            we want them leaving with sore feet and raving about your
-                            reception for years to come!
-                        </p>
-                    </div>
-                </div>
-            </Container>
+                </Container>
+            </div>
             <style jsx>
                 {`
+                    .parallax {
+                        background: linear-gradient(
+                                to right,
+                                rgba(15, 12, 41, 0.9),
+                                rgba(48, 43, 99, 0.8),
+                                rgba(36, 36, 62, 0.9)
+                            ),
+                            url('/dj_background.jpg');
+                        min-height: 500px;
+                        background-attachment: fixed;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
                     .card-container {
                         display: block;
                     }
@@ -81,8 +82,11 @@ const SectionWhy = (props) => {
                         }
                     }
                     .card {
-                        border-bottom: 3px solid var(--interactive);
                         margin-bottom: 30px;
+                        background: rgba(255, 255, 255, 0.8);
+                        padding: 30px 15px;
+                        text-align: center;
+                        border-radius: 5px;
                     }
                     @media screen and (min-width: ${BREAKPOINT}) {
                         .card {
@@ -99,7 +103,7 @@ const SectionWhy = (props) => {
                         border: 1px solid var(--gray-100);
                     }
                     .card p {
-                        color: var(--gray-400);
+                        color: #000;
                     }
                 `}
             </style>

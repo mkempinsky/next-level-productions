@@ -1,20 +1,17 @@
 import {BREAKPOINT} from '../../lib/styles';
 import Container from '../Container';
+import SectionHeader from '../SectionHeader';
 
-const paymentLink = 'https://simplecheckout.authorize.net/payment/CatalogPayment.aspx';
-
-const SectionUpgrades = (props) => {
+const SectionInfo = (props) => {
     return (
-        <section id="section-reviews">
+        <section id="section-info">
             <div className="parallax">
                 <Container>
-                    <img src="/icon-lighting.png" width="80px" height="auto" />
-                    <h2>Upgrades</h2>
-                    <div className="copy">
-                        Also, should you be interested, we do have upgraded sound and
-                        décor lighting packages available as well.
-                    </div>
-                    <img src="/icon-sound.png" width="80px" height="auto" />
+                    <SectionHeader
+                        title="Questions? Reservations?"
+                        subtitle="Get more information today!"
+                        color="#fff"
+                    />
                 </Container>
             </div>
             <style jsx>
@@ -22,8 +19,9 @@ const SectionUpgrades = (props) => {
                     .parallax {
                         background: linear-gradient(
                                 to right,
-                                rgba(20, 30, 48, 0.9),
-                                rgba(36, 59, 85, 0.8)
+                                rgba(15, 12, 41, 0.9),
+                                rgba(48, 43, 99, 0.8),
+                                rgba(36, 36, 62, 0.9)
                             ),
                             url('/dj_background.jpg');
                         min-height: 200px;
@@ -56,4 +54,4 @@ const SectionUpgrades = (props) => {
         </section>
     );
 };
-export default SectionUpgrades;
+export default SectionInfo;

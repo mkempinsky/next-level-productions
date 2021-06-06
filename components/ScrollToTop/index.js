@@ -76,7 +76,7 @@ class ScrollToTop extends Component {
                             height: 40px;
                             margin: 0 auto;
                             border: none;
-                            background: var(--orange);
+                            background: var(--primary);
                             border-radius: 100%;
                             padding: 0;
                             transform: rotate(-90deg);

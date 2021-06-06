@@ -39,10 +39,10 @@ const SectionPackages = ({data = []}) => {
     return (
         <section id="section-packages">
             <Container>
-                <SectionHeader title="Packages" />
+                <SectionHeader title="Packages" subtitle="Names and Descriptions" />
                 <div ref={ref} className={`card-container ${animatedClass}`}>
                     <div className="card">
-                        <img src="/standard_package.gif" />
+                        <img src="/packages_classic.png" />
                         <div
                             className="card__title"
                             dangerouslySetInnerHTML={{__html: packageOneTitle}}
@@ -60,7 +60,7 @@ const SectionPackages = ({data = []}) => {
                         </ul>
                     </div>
                     <div className="card">
-                        <img src="/premium_package.gif" />
+                        <img src="/packages_next-level.png" />
                         <div
                             className="card__title"
                             dangerouslySetInnerHTML={{__html: packageTwoTitle}}
@@ -78,7 +78,7 @@ const SectionPackages = ({data = []}) => {
                         </ul>
                     </div>
                     <div className="card">
-                        <img src="/rockstar_package.gif" />
+                        <img src="/packages_production.png" />
                         <div
                             className="card__title"
                             dangerouslySetInnerHTML={{__html: packageThreeTitle}}
@@ -96,13 +96,9 @@ const SectionPackages = ({data = []}) => {
                         </ul>
                     </div>
                 </div>
-                <div className="disclaimer">* same location as reception</div>
             </Container>
             <style jsx>
                 {`
-                    #section-packages {
-                        background: var(--gray-100);
-                    }
                     .card-container {
                         display: block;
                     }
@@ -117,10 +113,8 @@ const SectionPackages = ({data = []}) => {
                         width: 100%;
                         background: #fff;
                         border-radius: 5px;
-                        border: 1px solid var(--gray-200);
                         padding: 15px;
                         margin-bottom: 30px;
-                        box-shadow: 0px 2px 16px rgba(000, 000, 000, 0.1);
                     }
                     @media screen and (min-width: ${BREAKPOINT}) {
                         .card {
@@ -128,7 +122,7 @@ const SectionPackages = ({data = []}) => {
                         }
                     }
                     .card img {
-                        margin: 0 auto;
+                        margin: 0 auto 15px auto;
                         display: flex;
                         align-items: center;
                     }
@@ -139,6 +133,7 @@ const SectionPackages = ({data = []}) => {
                         text-align: center;
                         line-height: 28px;
                         height: 56px;
+                        font-size: 22px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -147,29 +142,20 @@ const SectionPackages = ({data = []}) => {
                         margin: 0;
                         list-style: none;
                     }
-                    .card li:first-child {
-                        border-radius: 4px 4px 0 0;
-                    }
-                    .card li:last-child {
-                        border-radius: 0 0 4px 4px;
-                    }
                     .card li {
                         font-family: var(--font-secondary);
                         padding: 3px 15px;
+                        max-width: 350px;
+                        margin: 0 auto;
                         text-align: center;
-                        border: 1px solid var(--gray-200);
                     }
-                    .card li:nth-child(odd) {
-                        background: var(--gray-200);
+                    .card li:before {
+                        content: '•';
+                        color: var(--primary);
+                        margin-right: 10px;
                     }
                     .card__note {
                         font-size: 12px;
-                    }
-                    .disclaimer {
-                        text-align: center;
-                        margin-top: 15px;
-                        font-size: 14px;
-                        color: #a1a1a1;
                     }
                 `}
             </style>

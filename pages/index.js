@@ -3,25 +3,17 @@ import Head from 'next/head';
 import HeroSlider from '../components/HeroSlider';
 import {
     SectionIntro,
-    SectionReviews,
     SectionWhy,
-    SectionPayment,
-    SectionDjs,
     SectionPackages,
     SectionGallery,
+    SectionInfo,
     SectionFacebook,
-    SectionUpgrades,
-    SectionPhotoBooth,
 } from '../components/Sections';
 import {formatGoogleSheetData} from '../lib/utils';
-import {djSpreadSheetUrl, packagesSpreadsheetUrl} from '../lib/globals';
+import {packagesSpreadsheetUrl} from '../lib/globals';
 
 const HomePage = (props) => {
     const {data} = props;
-
-    // dj data
-    let djData = data?.djData;
-    djData = formatGoogleSheetData(djData);
 
     // packages data
     let packagesData = data?.packageData;
@@ -37,31 +29,17 @@ const HomePage = (props) => {
             </Head>
             <HeroSlider />
             <SectionIntro />
-            <SectionReviews />
             <SectionWhy />
-            <SectionPayment />
-            <SectionDjs data={djData} />
             <SectionPackages data={packagesData} />
-            <SectionGallery />
             <SectionFacebook />
-            <SectionPhotoBooth />
-            <SectionUpgrades />
+            <SectionGallery />
+            <SectionInfo />
         </Layout>
     );
 };
 export default HomePage;
 
 export async function getServerSideProps(context) {
-    // dj data
-    let djData = [];
-    let djResponse = {};
-    try {
-        djResponse = await fetch(djSpreadSheetUrl);
-        djData = await djResponse.json();
-    } catch (e) {
-        console.warn(e);
-    }
-
     // packages data
     let packageData = [];
     let packageResponse = {};
@@ -75,7 +53,6 @@ export async function getServerSideProps(context) {
     return {
         props: {
             data: {
-                djData,
                 packageData,
             },
         },
