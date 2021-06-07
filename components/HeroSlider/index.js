@@ -1,7 +1,10 @@
 import IconInstagram from '../Svgs/icon-instagram';
 import IconFacebook from '../Svgs/icon-facebook';
+import IconVimeo from '../Svgs/icon-vimeo';
 import IconMail from '../Svgs/icon-mail';
 import {useState, useEffect} from 'react';
+import {contactEmail, facebookLink, instagramLink, vimeoLink} from '../../lib/globals';
+import {BREAKPOINT} from '../../lib/styles';
 
 const images = [
     '/galleryImages/gallery-05.jpg',
@@ -10,11 +13,8 @@ const images = [
     '/galleryImages/gallery-01.jpg',
 ];
 
-const titles = ['Interactive Entertainment', 'Incredible Experiences', 'Experts in AV'];
-
 const HeroSlider = (props) => {
     const [currentImageIndex, setImageIndex] = useState(0);
-    const [currentTitleIndex, setTitleIndex] = useState(0);
 
     useEffect(() => {
         const timmer = setInterval(() => {
@@ -28,20 +28,7 @@ const HeroSlider = (props) => {
         return () => clearInterval(timmer);
     }, []);
 
-    useEffect(() => {
-        const timmer = setInterval(() => {
-            setTitleIndex((currentTitleIndex) => {
-                const nextTitle = currentTitleIndex + 1;
-                return nextTitle >= 3 ? 0 : nextTitle;
-            });
-            return;
-        }, 5000);
-
-        return () => clearInterval(timmer);
-    }, []);
-
     const currentImage = images[currentImageIndex];
-    const currentTitle = titles[currentTitleIndex];
 
     return (
         <div className="hero-slider" id="section-hero">
@@ -52,27 +39,28 @@ const HeroSlider = (props) => {
                 }}>
                 <div className="hero__inner">
                     <div>
-                        <div className="hero__title animate__backInRight">
-                            {currentTitle}
-                        </div>
                         <div className="hero__logo">
-                            <img src="/next_level_logo.png" width="300" height="auto" />
+                            <img src="/next_level_logo.png" className="logo-img" />
+                        </div>
+                        <div className="hero__title animate__animated animate__flipInX">
+                            <div>Interactive Entertainment</div>
+                            <div>|</div>
+                            <div>Experts in AV</div>
+                            <div>|</div>
+                            <div>Incredible Experiences</div>
                         </div>
                         <div className="hero__social">
-                            <a
-                                href="https://www.facebook.com/rockstardjstl/?fref=ts&ref=br_tf"
-                                target="_blank"
-                                title="Facebook">
+                            <a href={facebookLink} target="_blank" title="Facebook">
                                 <IconFacebook height={40} />
                             </a>
-                            <a
-                                href="https://www.instagram.com/rockstardjstl/"
-                                target="_blank"
-                                title="Instagram">
+                            <a href={instagramLink} target="_blank" title="Instagram">
                                 <IconInstagram fill="#fff" />
                             </a>
-                            <a href="mailto:info@rockstardjs.com" title="Email">
+                            <a href={contactEmail} target="_blank" title="Email">
                                 <IconMail fill="#fff" width={22} />
+                            </a>
+                            <a href={vimeoLink} target="_blank" title="Vimeo">
+                                <IconVimeo fill="#fff" width={22} />
                             </a>
                         </div>
                     </div>
@@ -99,13 +87,31 @@ const HeroSlider = (props) => {
                     justify-content: center;
                     width: 100%;
                 }
+
                 .hero__title {
-                    color: var(--primary);
-                    font-size: 60px;
+                    font-size: 14px;
                     font-family: var(--font-primary);
+                    color: #fff;
                     font-weight: bold;
                     width: 100%;
-                    text-shadow: 0px 0px 10px rgba(000, 000, 000, 0.8);
+                    display: flex;
+                    margin-bottom: 15px;
+                    text-align: center;
+                }
+                @media screen and (min-width: ${BREAKPOINT}) {
+                    .hero__title {
+                        font-size: 22px;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .logo-img {
+                    width: 290px;
+                }
+                @media screen and (min-width: ${BREAKPOINT}) {
+                    .logo-img {
+                        width: 500px;
+                    }
                 }
                 .hero__logo {
                     width: 100%;
@@ -114,9 +120,9 @@ const HeroSlider = (props) => {
                 }
                 .hero__social {
                     display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
                     grid-gap: 10px;
-                    max-width: 180px;
+                    max-width: 250px;
                     align-items: center;
                     justify-content: center;
                     margin: 0 auto;

@@ -22,7 +22,12 @@ const SectionHeader = ({title = '', subtitle = '', color = ''}) => {
                     h2 {
                         text-align: center;
                         color: ${color || `var(--primary)`};
-                        font-size: 60px;
+                        font-size: 42px;
+                    }
+                    @media screen and (min-width: ${BREAKPOINT}) {
+                        h2 {
+                            font-size: 60px;
+                        }
                     }
                     h4 {
                         text-align: center;

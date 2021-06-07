@@ -125,6 +125,12 @@ const SectionPackages = ({data = []}) => {
                         margin: 0 auto 15px auto;
                         display: flex;
                         align-items: center;
+                        max-width: 250px;
+                    }
+                    @media screen and (min-width: ${BREAKPOINT}) {
+                        .card img {
+                            max-width: 400px;
+                        }
                     }
                     .card__title {
                         font-family: var(--font-primary);

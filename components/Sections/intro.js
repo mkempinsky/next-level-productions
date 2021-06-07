@@ -1,34 +1,32 @@
 import SectionHeader from '../SectionHeader';
+import useOnScreen from '../../lib/hooks/useOnScreen';
+import {useRef} from 'react';
 import {BREAKPOINT} from '../../lib/styles';
 import Container from '../Container';
-import Link from 'next/link';
+import {rockstarLink} from '../../lib/globals';
 import {scrollToElement} from '../../lib/utils';
 
 const SectionIntro = (props) => {
+    const ref = useRef();
+    const onScreen = useOnScreen(ref, '');
+    const animatedClass = onScreen ? 'animate__animated animate__rotateInDownLeft ' : '';
+
     return (
         <section id="section-about">
             <Container>
                 <SectionHeader title="About Us" subtitle="What's our story?" />
                 <div className="container">
-                    <div className="image-container">
-                        <img
-                            className="image-1"
-                            src="/galleryImages/gallery-03.jpg"
-                            width="250px"
-                            height="250px"
-                        />
-                        <img
-                            className="image-2"
-                            src="/galleryImages/gallery-01.jpg"
-                            width="400px"
-                            height="400px"
-                        />
+                    <div ref={ref} className={`image-container ${animatedClass}`}>
+                        <img className="image-1" src="/galleryImages/gallery-03.jpg" />
+                        <img className="image-2" src="/galleryImages/gallery-01.jpg" />
                     </div>
                     <div>
                         <h4>
                             AFTER FOUNDING{' '}
-                            <a href="http://rockstardjs.com/">ROCKSTAR DJS</a> IN ST.
-                            LOUIS ...
+                            <a href={rockstarLink} title="Rockstar DJs" target="_blank">
+                                ROCKSTAR DJS
+                            </a>{' '}
+                            IN ST. LOUIS ...
                         </h4>
                         <p>
                             Quain found an immediate need for a premium, engaging
@@ -61,6 +59,7 @@ const SectionIntro = (props) => {
                 {`
                     .container {
                         display: block;
+                        width: 100%;
                     }
                     @media screen and (min-width: ${BREAKPOINT}) {
                         .container {
@@ -71,6 +70,10 @@ const SectionIntro = (props) => {
                     }
                     .image-container {
                         position: relative;
+                        width: 100%;
+                        display: flex;
+                        text-align: center;
+                        margin: 100px auto 30px auto;
                     }
                     img {
                         border-radius: 100%;
@@ -78,20 +81,39 @@ const SectionIntro = (props) => {
                     .image-1 {
                         position: absolute;
                         top: -50px;
+                        width: 150px;
+                        height: 150px;
                         box-shadow: -5px 5px 15px rgba(000, 000, 000, 0.4);
                     }
                     .image-2 {
                         margin: 0 auto;
                         display: flex;
+                        width: 250px;
+                        height: 250px;
+                    }
+                    @media screen and (min-width: ${BREAKPOINT}) {
+                        .image-1 {
+                            width: 250px;
+                            height: 250px;
+                        }
+                        .image-2 {
+                            width: 400px;
+                            height: 400px;
+                        }
                     }
                     a {
                         color: var(--primary);
                         text-decoration: none;
                     }
                     .button-container {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-gap: 15px;
+                        display: block;
+                    }
+                    @media screen and (min-width: ${BREAKPOINT}) {
+                        .button-container {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 15px;
+                        }
                     }
                     button {
                         display: block;
@@ -99,12 +121,13 @@ const SectionIntro = (props) => {
                         text-decoration: none;
                         padding: 8px;
                         width: auto;
+                        min-width: 300px;
                         font-size: 18px;
                         font-weight: bold;
                         font-family: var(--font-primary);
                         border-radius: 5px;
                         text-align: center;
-                        margin-bottom: 30px;
+                        margin: 0 auto 30px auto;
                         cursor: pointer;
                         border: none;
                         height: 45px;

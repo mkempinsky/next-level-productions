@@ -1,4 +1,4 @@
-import {contactEmail} from '../../lib/globals';
+import {contactEmail, rockstarLink} from '../../lib/globals';
 import {useState} from 'react';
 import Link from 'next/link';
 import {scrollToElement} from '../../lib/utils';
@@ -23,7 +23,7 @@ const NavMobile = (props) => {
                 <Link href="/">
                     <a>
                         <div className="nav__title">
-                            <img src="/RSDJS_horizontal_logo.png" width="200px" />
+                            <img src="/next_level_logo.png" width="150px" />
                         </div>
                     </a>
                 </Link>
@@ -44,6 +44,19 @@ const NavMobile = (props) => {
                             Packages
                         </li>
                         <li onClick={() => handleRouting('section-gallery')}>Gallery</li>
+                        <li onClick={() => handleRouting('section-info')}>
+                            Get More Information
+                        </li>
+                        <li>
+                            <div>
+                                <a
+                                    href={rockstarLink}
+                                    title="Rockstar DJs"
+                                    target="_blank">
+                                    <img src="RSDJS_horizontal_logo.png" width="100px" />
+                                </a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div className="nav__contact">
@@ -65,7 +78,7 @@ const NavMobile = (props) => {
                     }
 
                     .nav__banner {
-                        height: 60px;
+                        height: 80px;
                         position: fixed;
                         display: flex;
                         align-items: center;
@@ -75,6 +88,7 @@ const NavMobile = (props) => {
                         z-index: 10;
                         width: 100%;
                         background: #000;
+                        color: #fff;
                         box-shadow: 2px 0px 10px rgba(000, 000, 000, 0.3);
                     }
                     .nav__banner a {
@@ -84,24 +98,25 @@ const NavMobile = (props) => {
                         font-weight: 700;
                     }
                     ul {
-                        padding-top: 60px;
+                        padding-top: 80px;
                     }
                     li {
                         text-align: center;
                         font-size: 18px;
                         font-weight: bold;
                         height: 50px;
-                        border-bottom: 1px solid var(--interactive);
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        color: #fff;
                     }
                     .nav__slideout {
                         position: fixed;
-                        background: #fff;
+                        background: #000;
                         right: -100%;
                         overflow-x: hidden;
                         height: 100vh;
+                        height: 100%;
                         width: 100%;
                     }
                     .nav__slideout.active {
@@ -118,7 +133,7 @@ const NavMobile = (props) => {
                     }
 
                     .nav__menu-icon span {
-                        background: var(--orange);
+                        background: var(--primary);
                         border-radius: 10px;
                         width: 100%;
                         height: 3px;
@@ -144,9 +159,10 @@ const NavMobile = (props) => {
                     .nav__contact {
                         margin: 20px auto;
                         text-align: center;
+                        color: #fff;
                     }
                     .nav__contact a {
-                        color: var(--orange);
+                        color: var(--primary);
                     }
                 `}
             </style>

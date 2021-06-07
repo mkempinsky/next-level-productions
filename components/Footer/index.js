@@ -4,6 +4,7 @@ import IconPhone from '../Svgs/icon-phone';
 import IconMail from '../Svgs/icon-mail';
 import IconLocation from '../Svgs/icon-location';
 import {BREAKPOINT} from '../../lib/styles';
+import {contactEmail, emailDisplay} from '../../lib/globals';
 
 const Footer = (props) => {
     const date = new Date();
@@ -18,18 +19,10 @@ const Footer = (props) => {
                         </div>
                         <div className="link">
                             <div>
-                                <IconPhone fill="#fff" width="16" />
-                            </div>
-                            <a href="tel:+1-314-518-2407">314.518.2407</a>
-                        </div>
-                        <div className="link">
-                            <div>
                                 <IconMail width="20" fill="#fff" />
                             </div>
                             <div>
-                                <a href="mailto:info@rockstardjs.com">
-                                    info@rockstardjs.com
-                                </a>
+                                <a href={contactEmail}>{emailDisplay}</a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +41,7 @@ const Footer = (props) => {
                     <div>
                         <Link href="/">
                             <a>
-                                <img src="/RSDJS_horizontal_logo.png" />
+                                <img src="/next_level_logo.png" width="200px" />
                             </a>
                         </Link>
                     </div>

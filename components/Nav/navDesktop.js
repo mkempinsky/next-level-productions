@@ -2,6 +2,7 @@ import {scrollToElement} from '../../lib/utils';
 import Link from 'next/link';
 import {withRouter} from 'next/router';
 import {useRouter} from 'next/router';
+import {rockstarLink} from '../../lib/globals';
 
 const NavDesktop = (props) => {
     const router = useRouter();
@@ -21,30 +22,48 @@ const NavDesktop = (props) => {
                     <div>
                         <Link href="/">
                             <a>
-                                <img src="RSDJS_horizontal_logo.png" />
+                                <img src="next_level_logo.png" width="200px" />
                             </a>
                         </Link>
-                        <div>Let's create your dream celebration</div>
                     </div>
                 </div>
-                <ul>
-                    <li>
-                        <Link href="/">
-                            <a>Home</a>
-                        </Link>
-                    </li>
-                    <li onClick={() => handleRouting('section-about')}>About Us</li>
-                    <li onClick={() => handleRouting('section-packages')}>Packages</li>
-                    <li onClick={() => handleRouting('section-gallery')}>Gallery</li>
-                </ul>
+
+                <div>
+                    <ul>
+                        <li>
+                            <Link href="/">
+                                <a>Home</a>
+                            </Link>
+                        </li>
+                        <li onClick={() => handleRouting('section-about')}>About Us</li>
+                        <li onClick={() => handleRouting('section-packages')}>
+                            Packages
+                        </li>
+                        <li onClick={() => handleRouting('section-gallery')}>Gallery</li>
+                        <li>
+                            <div>
+                                <a
+                                    href={rockstarLink}
+                                    title="Rockstar DJs"
+                                    target="_blank">
+                                    <img src="RSDJS_horizontal_logo.png" width="100px" />
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <button onClick={() => handleRouting('section-info')}>
+                                Get More Information
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <style jsx>
                 {`
                     .nav-desktop {
                         position: fixed;
-                        display: grid;
-                        grid-template-columns: 120px auto;
-                        align-items: flex-start;
+                        display: block;
+                        grid-template-columns: 200px auto;
                         width: 100%;
                         z-index: 10;
                         background: linear-gradient(
@@ -62,6 +81,7 @@ const NavDesktop = (props) => {
                     }
                     .link-container {
                         display: flex;
+                        min-width: 100%;
                         justify-content: space-between;
                     }
                     .logo {
@@ -100,7 +120,7 @@ const NavDesktop = (props) => {
                         border-top: 3px solid transparent;
                     }
                     li:hover {
-                        border-top: 3px solid var(--interactive);
+                        border-top: 3px solid var(--primary);
                     }
                     li:last-child {
                         width: auto;
@@ -108,6 +128,21 @@ const NavDesktop = (props) => {
                     }
                     li:last-child:hover {
                         border-top: 3px solid transparent;
+                    }
+                    button {
+                        border: none;
+                        background: var(--primary);
+                        padding: 0 30px;
+                        color: #fff;
+                        font-weight: bold;
+                        border-radius: 5px;
+                        height: 45px;
+                        margin-left: 10px;
+                        font-family: var(--font-primary);
+                    }
+                    button:hover {
+                        cursor: pointer;
+                        background: var(--primary-400);
                     }
                 `}
             </style>
