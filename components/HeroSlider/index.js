@@ -35,7 +35,12 @@ const HeroSlider = (props) => {
             <div
                 className="hero__background"
                 style={{
-                    backgroundImage: `var(--gradient-secondary), url(${currentImage})`,
+                    backgroundImage: `linear-gradient(
+                        to right,
+                        rgba(15, 12, 41, 0.75),
+                        rgba(48, 43, 99, 0.6),
+                        rgba(36, 36, 62, 0.75)
+                    ), url(${currentImage})`,
                 }}>
                 <div className="hero__inner">
                     <div>
