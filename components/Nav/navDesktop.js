@@ -15,6 +15,14 @@ const NavDesktop = (props) => {
             router.push(`/#${section}`, '');
         }
     };
+
+    const handleScrollToTop = () => {
+        window &&
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+    };
     return (
         <div className="nav-desktop">
             <div className="link-container">
@@ -30,11 +38,8 @@ const NavDesktop = (props) => {
 
                 <div>
                     <ul>
-                        <li>
-                            <Link href="/">
-                                <a>Home</a>
-                            </Link>
-                        </li>
+                        <li onClick={() => handleScrollToTop()}>Home</li>
+
                         <li onClick={() => handleRouting('section-about')}>About Us</li>
                         <li onClick={() => handleRouting('section-packages')}>
                             Packages

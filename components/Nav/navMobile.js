@@ -17,6 +17,14 @@ const NavMobile = (props) => {
             router.push(`/#${section}`, '');
         }
     };
+
+    const handleScrollToTop = () => {
+        window &&
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+    };
     return (
         <nav>
             <div className="nav__banner">
@@ -38,7 +46,7 @@ const NavMobile = (props) => {
             <div className={`nav__slideout ${showSlidout ? 'active' : ''}`}>
                 <div onClick={() => toggleSlideOut(false)}>
                     <ul>
-                        <li onClick={() => handleRouting('section-hero')}>Home</li>
+                        <li onClick={() => handleScrollToTop()}>Home</li>
                         <li onClick={() => handleRouting('section-why')}>About Us</li>
                         <li onClick={() => handleRouting('section-packages')}>
                             Packages

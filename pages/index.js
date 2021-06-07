@@ -22,10 +22,13 @@ const HomePage = (props) => {
     return (
         <Layout>
             <Head>
-                <title>Rockstar DJs | St.Louis, MO</title>
-                <meta name="title" content="Rockstar DJs | St.Louis, MO" />
-                <meta property="og:url" content="http://rockstardjs.com" />
-                <meta name="description" content="LET US MAKE YOUR DAY PERFECT!" />
+                <title>Next Level Productions | St.Louis, MO</title>
+                <meta name="title" content="Next Level Productions | St.Louis, MO" />
+                <meta property="og:url" content="http://nextlevelstl.com/" />
+                <meta
+                    name="description"
+                    content="Engaging entertainment company specializing in bar and bat mitzvahs"
+                />
             </Head>
             <HeroSlider />
             <SectionIntro />

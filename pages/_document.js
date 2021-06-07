@@ -14,8 +14,8 @@ export default class MyDocument extends Document {
 
                     <meta
                         property="og:title"
-                        content="Rockstar DJs | St.Louis, MO"></meta>
-                    <meta property="og:url" content="https://rockstardjs.com"></meta>
+                        content="Next Level Productions | St.Louis, MO"></meta>
+                    <meta property="og:url" content="https://nextlevelstl.com/"></meta>
                     <meta property="og:image" content="/RSDJ_Facebook_meta.png"></meta>
                     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
