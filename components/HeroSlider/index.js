@@ -42,7 +42,7 @@ const HeroSlider = (props) => {
                         <div className="hero__logo">
                             <img src="/next_level_logo.png" className="logo-img" />
                         </div>
-                        <div className="hero__title animate__animated animate__flipInX">
+                        <div className="hero__title">
                             <div>Interactive Entertainment</div>
                             <div>|</div>
                             <div>Experts in AV</div>

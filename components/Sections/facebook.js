@@ -18,15 +18,6 @@ const SectionFacebook = (props) => {
             </div>
             <style jsx>
                 {`
-                    .parallax {
-                        background: var(--gradient-primary), url('/dj_background.jpg');
-
-                        background-attachment: fixed;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        box-shadow: inset 0px 10px 15px rgba(000, 000, 000, 0.4);
-                    }
                     .container {
                         margin: 0 auto;
                         position: relative;
