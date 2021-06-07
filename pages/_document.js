@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
                         property="og:title"
                         content="Next Level Productions | St.Louis, MO"></meta>
                     <meta property="og:url" content="https://nextlevelstl.com/"></meta>
-                    <meta property="og:image" content="/RSDJ_Facebook_meta.png"></meta>
+                    <meta property="og:image" content="/share_photo.png"></meta>
                     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
