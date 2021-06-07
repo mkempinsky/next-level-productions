@@ -35,38 +35,35 @@ const HeroSlider = (props) => {
             <div
                 className="hero__background"
                 style={{
-                    backgroundImage: `linear-gradient(
-                        to right,
-                        rgba(15, 12, 41, 0.75),
-                        rgba(48, 43, 99, 0.6),
-                        rgba(36, 36, 62, 0.75)
-                    ), url(${currentImage})`,
+                    backgroundImage: `url(${currentImage})`,
                 }}>
-                <div className="hero__inner">
-                    <div>
-                        <div className="hero__logo">
-                            <img src="/next_level_logo.png" className="logo-img" />
-                        </div>
-                        <div className="hero__title">
-                            <div>Interactive Entertainment</div>
-                            <div>|</div>
-                            <div>Experts in AV</div>
-                            <div>|</div>
-                            <div>Incredible Experiences</div>
-                        </div>
-                        <div className="hero__social">
-                            <a href={facebookLink} target="_blank" title="Facebook">
-                                <IconFacebook height={40} />
-                            </a>
-                            <a href={instagramLink} target="_blank" title="Instagram">
-                                <IconInstagram fill="#fff" />
-                            </a>
-                            <a href={contactEmail} target="_blank" title="Email">
-                                <IconMail fill="#fff" width={22} />
-                            </a>
-                            <a href={vimeoLink} target="_blank" title="Vimeo">
-                                <IconVimeo fill="#fff" width={22} />
-                            </a>
+                <div className="hero__overlay">
+                    <div className="hero__inner">
+                        <div>
+                            <div className="hero__logo">
+                                <img src="/next_level_logo.png" className="logo-img" />
+                            </div>
+                            <div className="hero__title">
+                                <div>Interactive Entertainment</div>
+                                <div>|</div>
+                                <div>Experts in AV</div>
+                                <div>|</div>
+                                <div>Incredible Experiences</div>
+                            </div>
+                            <div className="hero__social">
+                                <a href={facebookLink} target="_blank" title="Facebook">
+                                    <IconFacebook height={40} />
+                                </a>
+                                <a href={instagramLink} target="_blank" title="Instagram">
+                                    <IconInstagram fill="#fff" />
+                                </a>
+                                <a href={contactEmail} target="_blank" title="Email">
+                                    <IconMail fill="#fff" width={22} />
+                                </a>
+                                <a href={vimeoLink} target="_blank" title="Vimeo">
+                                    <IconVimeo fill="#fff" width={22} />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,6 +81,12 @@ const HeroSlider = (props) => {
                     -webkit-transition: background-image 0.3s ease-in-out;
                     transition: background-image 0.3s ease-in-out;
                 }
+                .hero__overlay {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    background: rgba(000, 000, 000, 0.75);
+                }
 
                 .hero__inner {
                     height: 780px;
@@ -100,6 +103,8 @@ const HeroSlider = (props) => {
                     font-weight: bold;
                     width: 100%;
                     display: flex;
+                    grid-gap: 10px;
+
                     margin-bottom: 15px;
                     text-align: center;
                 }
